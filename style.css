@@ -7,6 +7,35 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   height: 100vh;
   width: 100%;
+  cursor: none;
+}
+
+span {
+  border-radius: 1300px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  mix-blend-mode: difference;
+  transition: ease-in-out;
+  pointer-events: none;
+  z-index: -1;
+}
+.black {
+  width: 150px;
+  height: 150px;
+  background: #00000060;
+  transition: 0.23s;
+}
+.green {
+  width: 80px;
+  height: 80px;
+  background: #007ba7;
+  transition: 0.18s;
+}
+.orange {
+  width: 20px;
+  height: 20px;
+  background: gold;
+  transition: 0.1s;
 }
 button {
   all: unset;
@@ -79,10 +108,12 @@ button:hover {
 .right {
   background: url(./img/banner.jpg) right/cover;
   transition: ease-in-out 0.4s;
+  z-index: -2;
 }
 .sec-left {
   background: url(./img/img-left.jpg) center/cover;
   height: 50vh;
+  z-index: -2;
 }
 .parent button:hover {
   transform: translateX(5px);
@@ -94,6 +125,7 @@ button:hover {
 .right-part {
   background: url(./img/img-right.jpg) center/cover;
   height: 50vh;
+  z-index: -2;
 }
 footer {
   width: 100%;
@@ -132,7 +164,7 @@ label {
 input[type="text"],
 input[type="email"] {
   padding: 5px;
-  border-radius: 1px solid;
+  border-radius: 2px solid;
   outline: none;
 }
 textarea {
@@ -143,7 +175,7 @@ textarea {
 }
 textarea:focus,
 input:focus {
-  border: solid 1px rgb(4, 143, 129);
+  border: solid 2px rgb(4, 143, 129);
 }
 input[type="submit"] {
   all: unset;
@@ -209,8 +241,7 @@ li:hover {
     font-size: 0.8em;
   }
 }
-@media
- screen and (max-width: 700px) {
+@media screen and (max-width: 700px) {
   form input {
     width: 100%;
     margin: 0 auto;
