@@ -17,26 +17,6 @@ button {
   border: solid 1px black;
   background: transparent;
 }
-.first,
-.second-part,
-.last-part {
-  display: grid;
-  grid-template-columns: repeat(2, 50%);
-  width: 100%;
-  height: 100%;
-}
-.first {
-  margin: 0 30px;
-}
-.parent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  flex-direction: column;
-  text-align: left;
-  width: 100%;
-}
 h1,
 h2 {
   text-align: left;
@@ -52,6 +32,39 @@ p {
   margin: 20px 0;
   align-self: flex-start;
   line-height: 28px;
+}
+.first,
+.element,
+.wr {
+  padding: 10px;
+}
+.first {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  width: 100%;
+  height: 100vh;
+}
+.left-parent,
+.part {
+  display: flex;
+  align-items: center;
+  height: auto;
+  width: 100%;
+}
+.second-part {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  width: 100%;
+  height: auto;
+}
+.sec-left {
+  width: 100%;
+  height: 100vh;
+}
+.last-part {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  width: 100%;
 }
 .parent button {
   text-align: left;
@@ -74,18 +87,7 @@ button:hover {
 .parent button:hover {
   transform: translateX(5px);
 }
-.sec-right,
-.left-part {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50vh;
-  flex-direction: column;
-  text-align: left;
-  width: 100%;
-  align-items: flex-start;
-  margin: 0 30px;
-}
+
 .left-part {
   margin: 0 30px;
 }
@@ -108,15 +110,19 @@ form {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr;
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
   gap: 15px;
+  text-align: center;
 }
 .txt-part,
 .input-part {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 15px;
+  height: auto;
+  width: 50%;
+  margin: 0 auto;
 }
 label {
   text-transform: capitalize;
@@ -132,6 +138,8 @@ input[type="email"] {
 textarea {
   resize: none;
   outline: none;
+  width: 50%;
+  margin: 0 auto;
 }
 textarea:focus,
 input:focus {
@@ -159,29 +167,52 @@ ul::after {
   position: absolute;
   height: 1px;
   width: 85%;
-  background:rgb(185, 187, 187) ;
+  background: rgb(185, 187, 187);
   transform: translate(-50%, -50%);
   left: 50%;
-  top:5%;
+  top: 5%;
   margin: 30px 0;
 }
-ul{
+ul {
   display: flex;
-  justify-content: space-between;
-  width: 30%;
-  margin: 0 auto;  
+  justify-content: space-around;
+  width: 50%;
+  margin: 0 auto;
 }
-li{
+li {
   margin: 80px 0;
   list-style: none;
   border: solid 1px rgb(170, 167, 167);
   cursor: pointer;
   border-radius: 1350px;
-  font-size: 1.5em;
-  padding: .8em 1em;
-  transition: ease .5s;
-} 
-li:hover{
+  font-size: 1em;
+  padding: 0.8em 1em;
+  transition: ease 0.5s;
+  display: flex;
+  justify-content: space-around;
+}
+li:hover {
   border: solid 1px #09d8c3;
   transform: translateY(-9px);
+}
+@media screen and (max-width: 754px) {
+  .first,
+  .second-part,
+  .last-part {
+    grid-template-columns: 1fr;
+  }
+  .sec-left,
+  .right-part {
+    display: none;
+  }
+  li {
+    font-size: 0.8em;
+  }
+}
+@media
+ screen and (max-width: 700px) {
+  form input {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
